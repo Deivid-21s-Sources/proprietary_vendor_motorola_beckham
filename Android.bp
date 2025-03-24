@@ -9,17 +9,6 @@ soong_namespace {
 }
 
 android_app_import {
-	name: "MotoSignatureApp",
-	owner: "motorola",
-	apk: "proprietary/system/app/MotoSignatureApp/MotoSignatureApp.apk",
-	preprocessed: true,
-	presigned: true,
-	dex_preopt: {
-		enabled: false,
-	},
-}
-
-android_app_import {
 	name: "ModFmwkProxyService",
 	owner: "motorola",
 	apk: "proprietary/system/priv-app/ModFmwkProxyService/ModFmwkProxyService.apk",
@@ -34,17 +23,6 @@ android_app_import {
 	name: "ModService",
 	owner: "motorola",
 	apk: "proprietary/system/priv-app/ModService/ModService.apk",
-	certificate: "platform",
-	dex_preopt: {
-		enabled: false,
-	},
-	privileged: true,
-}
-
-android_app_import {
-	name: "MotCamera2",
-	owner: "motorola",
-	apk: "proprietary/system/priv-app/MotCamera2/MotCamera2.apk",
 	certificate: "platform",
 	dex_preopt: {
 		enabled: false,
@@ -75,12 +53,6 @@ android_app_import {
 	system_ext_specific: true,
 }
 
-dex_import {
-	name: "com.motorola.motosignature",
-	owner: "motorola",
-	jars: ["proprietary/system/framework/com.motorola.motosignature.jar"],
-}
-
 install_symlink {
 	name: "libmodhw_libmodhw_symlink64",
 	installed_location: "system/priv-app/ModFmwkProxyService/lib/arm64/libmodhw.so",
@@ -92,4 +64,3 @@ install_symlink {
 	installed_location: "system/priv-app/ModFmwkProxyService/lib/arm64/libvibratorhw.so",
 	symlink_target: "/system/lib64/libvibratorhw.so",
 }
-
